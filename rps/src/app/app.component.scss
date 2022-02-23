@@ -1,0 +1,76 @@
+@import "../styles.scss";
+
+.main {
+    // border: 1px solid #ccc;
+    max-width: 120rem;
+    margin: 8rem auto;
+
+    // @media screen and (max-width: $bp-large) {
+    //     margin: 0;
+    //     max-width: 100%;
+    //     min-width: 100%;
+    // }
+
+    // @media screen and (max-width: $bp-medium) {
+    //     margin: 0;
+    //     max-width: 100%;
+    //     min-width: 100%;
+    // }
+        
+    
+        
+
+}
+
+
+.outletContainer{
+    background-color: grey;
+    border: 1px solid black;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 8px 8px #33334d;
+    min-height: 50rem;
+}
+
+
+#title{
+    // font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 0px;
+    // padding-left: 1rem; 
+    width: 100rem;
+    font-size: 2.5rem;
+}
+
+
+#leaderBoardBox {
+    display: flex;
+    margin-left: auto;
+    padding-top: 0.8rem;
+    font-size: 2.5rem;
+    height: 100px;
+    flex-direction: row;
+    /* align-content: flex-end; */
+    justify-content: space-between;
+}
+
+
+#leaderBoardBox a {
+    color:black;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#userLogin-button{
+    position: relative;
+    width: 92px;
+    height: 29px;
+    background-color: dodgerblue;
+    border-radius: 12px;
+    color: white;
+    margin-left: 309px;
+    text-decoration: none;
+}

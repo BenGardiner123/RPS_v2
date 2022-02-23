@@ -1,0 +1,32 @@
+.home-image{
+//resize image to 50%
+    width: 70%;
+    height: auto;
+
+
+}
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.home-image-container{
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.home-greeting-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,96 @@
+.container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    //max-width: 120rem;
+    margin: 8rem auto;
+}
+
+.choiceContainer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    text-align: center;
+}
+
+.choice{
+    display: flex;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    height: 20rem;
+    width: 62rem;
+    
+}
+
+.roundCounter{
+    //this will need to be the entire length of the container but positioned at the start
+    flex: 1;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.buttonContainer-choice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.shootButtonChoice{
+    margin-right: 1rem !important;
+    font-size: 3.7rem !important;
+    line-height: 5rem !important;
+}
+
+
+.choice.rock{
+    /* border: 1px black solid; */
+    background: url('../../../../assets/rock.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 1rem;
+    
+}
+
+
+.choice.rock.selected{
+    /* border: 1px black solid; */
+    background: url('../../../../assets/rock-selected.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.choice.paper{
+    /* border: 1px black solid; */
+    background: url('../../../../assets/paper.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 1rem;
+}
+
+.choice.paper.selected{
+    /* border: 1px black solid; */
+    background: url('../../../../assets/paper-selected.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.choice.scissors{
+    /* border: 1px black solid; */
+    background: url('../../../../assets/scissors.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.choice.scissors.selected{
+    /* border: 1px black solid; */
+    background: url('../../../../assets/sciss-selected.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

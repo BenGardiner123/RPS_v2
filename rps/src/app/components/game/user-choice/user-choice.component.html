@@ -1,0 +1,35 @@
+<div class="container">
+  
+    <div class="choiceContainer">
+        
+        <div class="roundCounter"> Round {{roundCounter}} / {{roundLimit}} </div>
+        
+        <div class="choice">
+            <div [ngClass]="!rockSelected ? 'choice rock' : 'choice rock selected'"(click)="chooseThis('Rock')">
+            </div>
+    
+            <div [ngClass]="!paperSelected ? 'choice paper' : 'choice paper selected'"(click)="chooseThis('Paper')">
+            </div>
+    
+            <div [ngClass]="!scissorsSelected ? 'choice scissors' : 'choice scissors selected'"(click)="chooseThis('Scissors')">
+            </div>
+        </div>
+
+        <div class="buttonContainer-choice">
+            <button mat-raised-button color="primary" 
+            class="shootButtonChoice" 
+            (click)="makeSelection()" 
+            [disabled]="!isSelected" 
+            matTooltip="Let's send it downrange"
+            matTooltipHideDelay="1"
+            aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+            >Shoot!</button>
+        </div>
+       
+
+    </div>
+
+    
+    
+
+</div>

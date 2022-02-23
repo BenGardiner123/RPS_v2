@@ -1,0 +1,33 @@
+<div class="container">
+
+    <!-- creata a mat-spinner -->
+    <mat-spinner *ngIf="isLoading" color="accent" mode="indeterminate" ></mat-spinner>
+
+    <div *ngIf="!isLoading">
+        <div *ngIf="winner" class="outcomeDisplay">
+            <h1>You Win! </h1>
+        </div>
+        <div *ngIf="loser" class="outcomeDisplay">
+            <h1>You Lose ! </h1>
+        </div>
+        <div *ngIf="draw" class="outcomeDisplay">
+            <h1>You Draw ! </h1>
+        </div>
+        
+        <!-- <app-result-detail *ngFor="let gameResult of gameResultService.g" [results]="gameResult"></app-result-detail> -->
+    </div>
+    
+
+    <div class="buttonBox">
+
+
+        <button mat-raised-button color="primary" 
+                class="shootButton" 
+                matTooltip="you probably lost.... nevermind... try again"
+                matTooltipHideDelay="1"
+                (click)="reset()"
+                aria-label="Button that displays a tooltip that hides when scrolled out of the container"
+                >Try Again?</button>
+
+    </div>
+</div>

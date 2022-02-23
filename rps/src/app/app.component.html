@@ -1,0 +1,19 @@
+<div class="main">
+  <div id="title">
+      <!-- need to change this back to the round selection after testing finsihed -->
+      <a routerLink="/login">
+          <strong>Rock, Paper, Scissors</strong>
+         
+      </a>
+  </div>
+  <div class="outletContainer">
+      <!-- add the home component and hide if authenicated -->
+      <router-outlet></router-outlet>
+  </div>
+  <div id="leaderBoardBox">
+          
+         <app-app-auth-button></app-app-auth-button>
+      
+          <a routerLink="/leaderboard">View Leaderboard</a>
+  </div>
+</div>

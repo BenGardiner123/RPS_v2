@@ -1,0 +1,42 @@
+<div class="home-container">
+    <div *ngIf="!(auth.isAuthenticated$ | async);" class="home-image-container">
+        <div>
+            <img class="home-image" src="/assets/rock.png" alt="">
+        </div>
+        <div>
+            <img class="home-image" src="/assets/paper.png" alt="">
+        </div>
+        <div>
+            <img class="home-image" src="/assets/scissors.png" alt="">
+        </div>
+    </div>
+    <!-- create a home image container ngif authencated -->
+    <div *ngIf="auth.isAuthenticated$ | async;" class="home-image-container">
+        <div>
+            <h1>Alright, hit play and let's do this!</h1>
+        </div>
+    </div>
+    
+    <div *ngIf="auth.isAuthenticated$ | async;" class="home-greeting-container">
+    
+        <button mat-fab color="primary" (click)="play()" aria-label="Example icon button with a delete icon">
+            <mat-icon>play_arrow</mat-icon>
+        </button>
+        <!-- create a mat-progress spiiner while authenication is loading -->
+        <mat-spinner *ngIf="!(auth.isAuthenticated$ | async);" [diameter]="30" [strokeWidth]="4"></mat-spinner>
+       
+    </div>
+
+    <div *ngIf="!(auth.isAuthenticated$ | async);" class="home-greeting-container">
+      
+        <h2>Please login to play</h2>
+
+        
+    
+    </div>
+
+</div>
+
+
+
+
