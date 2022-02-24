@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { LeaderboardEnvelope } from '../Models/leaderboard';
+import  Auth  from '../../../auth_config.json';
 
 
 @Injectable({
@@ -11,12 +12,13 @@ import { LeaderboardEnvelope } from '../Models/leaderboard';
 export class LeaderboardService {
 
   //acceess the environemtn variable to get the url
-  private apiURL = environment.auth.audience  + "Leaderboard";
+  private url = Auth.apiUri + "Leaderboard"
 
   constructor(private http: HttpClient) { }
 
   getLeaderboard(): Observable<LeaderboardEnvelope> {
-    return this.http.get<LeaderboardEnvelope>(this.apiURL + "/Leaderboard");
+    console.log("leaderboard service", this.url);
+    return this.http.get<LeaderboardEnvelope>(this.url + "/Leaderboard");
   }
 
 }

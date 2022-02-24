@@ -7,7 +7,8 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { environment } from 'src/environments/environment';
 import { Game, GameCheckResponseModel, GameCodeResponseModel } from '../Models/game';
 import { AuthenticationService } from './auth.service';
-
+import { environment as env } from '../../../../rps/src/environments/environment';
+import  Auth  from '../../../auth_config.json';
 
 
 @Injectable({
@@ -15,7 +16,8 @@ import { AuthenticationService } from './auth.service';
 })
 export class GameService {
 
-  private apiURL = environment.auth.audience + "Game";
+  //set the apiu url from environemens
+  private url = Auth.apiUri + "Game"
 
   public userGameCode: string = "";
 
@@ -45,6 +47,7 @@ export class GameService {
     private httpClient: HttpClient, 
     private auth: AuthenticationService) {
     console.log("game service constructor", this.gameDataSource$.value);
+    console.log("the url", this.url)
   }
 
   incrementCounter() {
@@ -95,7 +98,7 @@ export class GameService {
     this.gameDataSource$.value.username = this.auth.getUsername();
     console.log("username Check", this.gameDataSource$.value);
 
-    return this.httpClient.post<GameCheckResponseModel>(this.apiURL + "/StartGame", {
+    return this.httpClient.post<GameCheckResponseModel>(this.url + "/StartGame", {
       //get the username from the authservice
       username : this.auth.getUsername(),
       roundLimit: roundLimit,
@@ -148,7 +151,7 @@ export class GameService {
     };
     
     console.log("outgoing object", outgoingGame);
-    let request = this.httpClient.post<Game>(this.apiURL + "/postSelection", outgoingGame,);
+    let request = this.httpClient.post<Game>(this.url + "/postSelection", outgoingGame,);
     request.subscribe((response) => {
       //this stores the selection being pushed over from the compnent into the variable above
       console.log("this is whats coming back", response);

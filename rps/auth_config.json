@@ -1,8 +1,9 @@
+
 {
   "domain": "dev-znnnr8do.us.auth0.com",
   "clientId": "cUDpEVVeNYZLHpnu2jG7KX3lLQhcVCR8",
-  "audience": "YOUR_API_IDENTIFIER",
-  "apiUri": "http://localhost:5000",
+  "audience": "https://rockpaperscissors",
+  "apiUri": "http://localhost:5066/api/",
   "appUri": "http://localhost:4200",
   "errorPath": "/error"
 }

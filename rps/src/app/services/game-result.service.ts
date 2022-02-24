@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { GameCodeResponseModel, GameResultResponseModel, GameWinnerResponseModel } from '../Models/game';
-
+import { environment as env } from '../../../../rps/src/environments/environment';
+import  Auth  from '../../../auth_config.json';
 import { GameService } from './game.service';
 
 @Injectable({
@@ -23,7 +24,7 @@ export class GameResultService {
     
   }
 
-  private apiURL = environment.auth.audience + "Game";
+  private url = Auth.apiUri + "Game"
 
   
 
@@ -32,7 +33,7 @@ export class GameResultService {
     let data = {
      gameCode: this.gameService.userGameCode.toString()
     }
-    return this.httpClient.post<GameWinnerResponseModel>(this.apiURL + "/CalculateWinner", data);
+    return this.httpClient.post<GameWinnerResponseModel>(this.url + "/CalculateWinner", data);
      
   }
 
@@ -41,7 +42,7 @@ export class GameResultService {
     let data = {
       gameCode: this.gameService.userGameCode.toString()
      }
-    return this.httpClient.post<GameResultResponseModel>(this.apiURL + "/GameResult", data );  
+    return this.httpClient.post<GameResultResponseModel>(this.url + "/GameResult", data );  
   }
 
 }

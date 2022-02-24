@@ -4,6 +4,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 // Import the AuthService type from the SDK
 import { AuthService } from '@auth0/auth0-angular';
 
+
 @Component({
   selector: 'app-app-auth-button',
   templateUrl: './app-auth-button.component.html',
@@ -18,9 +19,6 @@ export class AppAuthButtonComponent implements OnInit {
   
 
   loginWithRedirect() {
-    this.auth.loginWithRedirect({appState: {
-      target: 'http://localhost:4200/rounds'
-    }});
+    this.auth.loginWithRedirect();
   }
-
 }
