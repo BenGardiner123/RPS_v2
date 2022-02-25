@@ -1,5 +1,4 @@
 import { DOCUMENT } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
 import { Component, Inject, OnInit } from '@angular/core';
 // Import the AuthService type from the SDK
 import { AuthService } from '@auth0/auth0-angular';
@@ -12,13 +11,16 @@ import { AuthService } from '@auth0/auth0-angular';
 })
 export class AppAuthButtonComponent implements OnInit {
 
-  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService, private http: HttpClient) { }
+  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService){}
 
   ngOnInit(): void {
-  }
+  }s
   
 
   loginWithRedirect() {
     this.auth.loginWithRedirect();
+
   }
+
+    
 }

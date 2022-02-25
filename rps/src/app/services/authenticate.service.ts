@@ -8,18 +8,23 @@ import { Observable } from 'rxjs';
 export class AuthenticationService {
   
   //username as a strnig
-  username: string = "";
+  public username: string = "";
 
   constructor(public authService: AuthService) {
     this.authService.user$.subscribe(user => { 
-     this.username = user.email;
-    });
+      this.username = user.name;
+     }
+    );
   }
 
-  //returns the username
-  public getUsername(): string {
+  //create a getter for the username
+  public get userName(): string {
     return this.username;
   }
+
+ 
+
+
 
   
 }

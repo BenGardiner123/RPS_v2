@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { environment } from 'src/environments/environment';
 import { Game, GameCheckResponseModel, GameCodeResponseModel } from '../Models/game';
-import { AuthenticationService } from './auth.service';
+import { AuthenticationService } from './authenticate.service';
 import { environment as env } from '../../../../rps/src/environments/environment';
 import  Auth  from '../../../auth_config.json';
 
@@ -94,13 +94,13 @@ export class GameService {
   startGame(roundLimit: number){
     //create a new date object to store the current time
     let NewGameTime = new Date().toISOString();
-    console.log("start game");
-    this.gameDataSource$.value.username = this.auth.getUsername();
+    console.log("start game", this.gameDataSource$.value);
+    this.gameDataSource$.value.username = this.auth.userName;
     console.log("username Check", this.gameDataSource$.value);
 
     return this.httpClient.post<GameCheckResponseModel>(this.url + "/StartGame", {
       //get the username from the authservice
-      username : this.auth.getUsername(),
+      username : this.auth.userName,
       roundLimit: roundLimit,
       DateTimeStarted: NewGameTime,
       roundCounter: this.gameDataSource$.value.roundCounter
@@ -143,7 +143,7 @@ export class GameService {
   commitSelection(option: string) {
     this.updateSubjectData(this.userGameCode);
     let outgoingGame = {
-      username: this.auth.getUsername(),
+      username: this.auth.userName,
       playerChoice: option,
       roundLimit: this.gameDataSource$.value.roundLimit,  
       DateTimeStarted: this.gameDataSource$.value.startDateTime,
