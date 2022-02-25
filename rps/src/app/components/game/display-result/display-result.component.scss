@@ -2,3 +2,24 @@
   width: 2rem;
   height: 2rem;
 }
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  //max-width: 120rem;
+  margin: 18% auto;
+
+}
+
+.reuslt-container{
+  //center vertically
+  display: flex;
+  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  text-align: center;
+}

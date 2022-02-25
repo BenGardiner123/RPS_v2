@@ -183,10 +183,9 @@ export class GameService {
   }
 
   resetGame(){
-    //clear the gamedataSource behaavior subject
-    let data = JSON.parse(localStorage.getItem("auth_data"));
+    
     this.gameDataSource$.next({ 
-      username: data.username,
+      username: this.auth.userName,
       gameCode: "",
       startDateTime: null,
       roundLimit: 0,
